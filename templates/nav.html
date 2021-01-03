@@ -1,0 +1,28 @@
+<html>
+<!-- Add additional CSS in static file --> 
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <head>{% block title %}<title>Ayini Millets</title>{% endblock %} 
+      {% load static %}
+
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/></head>
+    <body>
+      <h1 style="text-align:right;">{{request.session.username}}<br></h1>
+      {% load static %}
+
+      <img src="{% static 'images/img_avatar.jpeg'%}" alt="Avatar" height="100" width="100" align="right" class="avatar">
+
+<br><br><br><br>
+
+        {% block sidebar %}
+        <ul>
+            <li>Order</li>
+            <li>Process</li>
+            <li>Packing</li>
+            <li>Despatch</li>
+            <li><a href="{% url 'home:logout' %}">Logout</a></li>
+          </ul>
+          
+          {% endblock %}
+    </body>
+</html>
